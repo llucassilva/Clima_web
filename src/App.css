@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,800;1,500&display=swap'); 
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background: rgb(12,105,196);
+  background: linear-gradient(180deg, rgba(12,105,196,1) 0%, rgba(74,135,255,1) 33%, rgba(73,155,201,1) 85%, rgba(133,203,246,1) 98%);
+  font-family: 'Poppins', sans-serif;
+}
+.App{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.linha-topo, .linha-bot{
+  width : 90%; 
+  text-align:center; 
+
+}
+.alegria{
+display: flex;
+}
+
+@media (max-width: 1083px) {
+  .alegria{
+    flex-direction: column;
+    height: 200vh;
+  }
+}
