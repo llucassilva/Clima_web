@@ -14,7 +14,7 @@ import api from "./services/api";
 function App(){
   const   [cidadesp, setcidadesp] = useState("");
   const [cidaderj, setcidaderj] = useState("");
-  const [cidadebh, setcidadebh] = useState("");
+  const [cidadedf, setcidadedf] = useState("");
 
   useEffect(() => {
     async function buscarClimasp() {
@@ -57,33 +57,33 @@ function App(){
         />
       );
     }
-    async function buscarClimabh() {
+    async function buscarClimadf() {
       const resposta = await api.get(
         "https://api.weatherapi.com/v1/forecast.json?key=870e327d30f5486e914120742220509&q=Brasilia&days=1&aqi=no&alerts=no"
       );
-      const climabh = resposta.data;
-      setcidadebh(
+      const climadf = resposta.data;
+      setcidadedf(
         <Card
-          img={climabh.current.condition.icon}
-          temp={climabh.current.temp_c}
-          local={climabh.location.name}
+          img={climadf.current.condition.icon}
+          temp={climadf.current.temp_c}
+          local={climadf.location.name}
           temp_max="assets/up-arrow.png"
           temp_min="assets/down-arrow.png"
-          min={climabh.forecast.forecastday[0].day.mintemp_c}
-          max={climabh.forecast.forecastday[0].day.maxtemp_c}
-          umidade={climabh.current.humidity}
-          uv={climabh.current.uv}
-          sensacao={climabh.current.feelslike_c}
+          min={climadf.forecast.forecastday[0].day.mintemp_c}
+          max={climadf.forecast.forecastday[0].day.maxtemp_c}
+          umidade={climadf.current.humidity}
+          uv={climadf.current.uv}
+          sensacao={climadf.current.feelslike_c}
         />
       );
     }
     buscarClimasp();
     buscarClimarj();
-    buscarClimabh();
+    buscarClimadf();
   }, []);
 
   console.log(cidadesp);
-  console.log(cidadebh);
+  console.log(cidadedf);
   return(
     <div>
       <Header />
@@ -91,7 +91,7 @@ function App(){
       <div className='alegria'>
         {cidadesp} 
         {cidaderj}
-        {cidadebh}
+        {cidadedf}
       </div>
       
       <Footer />
