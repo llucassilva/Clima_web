@@ -19,7 +19,7 @@ function App(){
   useEffect(() => {
     async function buscarClimasp() {
       const resposta = await api.get(
-        "http://api.weatherapi.com/v1/forecast.json?key=870e327d30f5486e914120742220509&q=Sao%20Paulo&days=1&aqi=no&alerts=no"
+        "https://api.weatherapi.com/v1/forecast.json?key=870e327d30f5486e914120742220509&q=sao%20paulo&days=1&aqi=no&alerts=no"
       );
       const climasp = resposta.data;
       setcidadesp(
@@ -39,7 +39,7 @@ function App(){
     }
     async function buscarClimarj() {
       const resposta = await api.get(
-        "http://api.weatherapi.com/v1/forecast.json?key=870e327d30f5486e914120742220509&q=Rio%20de%20Janeiro&days=1&aqi=no&alerts=no"
+        "https://api.weatherapi.com/v1/forecast.json?key=870e327d30f5486e914120742220509&q=Rio%20de%20Janeiro&days=1&aqi=no&alerts=no"
       );
       const climarj = resposta.data;
       setcidaderj(
@@ -59,7 +59,7 @@ function App(){
     }
     async function buscarClimabh() {
       const resposta = await api.get(
-        "http://api.weatherapi.com/v1/forecast.json?key=870e327d30f5486e914120742220509&q=Brasilia&days=1&aqi=no&alerts=no"
+        "https://api.weatherapi.com/v1/forecast.json?key=870e327d30f5486e914120742220509&q=Brasilia&days=1&aqi=no&alerts=no"
       );
       const climabh = resposta.data;
       setcidadebh(
